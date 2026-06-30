@@ -130,13 +130,14 @@
     }
 
     .topnav {
-      height: 68px;
+      min-height: 68px;
       border-bottom: 1px solid #eeeeee;
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 34px;
+      gap: 30px;
       flex-wrap: wrap;
+      padding: 12px 0;
     }
 
     .topnav a {
@@ -286,6 +287,13 @@
       margin-top: 0;
     }
 
+    .sub-title {
+      margin-top: 22px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid #eeeeee;
+      color: #222;
+    }
+
     footer {
       margin-top: 36px;
       padding-top: 18px;
@@ -314,8 +322,6 @@
       }
 
       .topnav {
-        height: auto;
-        padding: 18px 0;
         justify-content: flex-start;
         gap: 16px;
       }
@@ -378,6 +384,7 @@
           <li><a href="#publications">Publications</a></li>
           <li><a href="#projects">Projects</a></li>
           <li><a href="#experience">Experience</a></li>
+          <li><a href="#education">Education</a></li>
           <li><a href="#awards">Awards</a></li>
         </ul>
       </div>
@@ -391,6 +398,7 @@
         <a href="#publications">Publications</a>
         <a href="#projects">Projects</a>
         <a href="#experience">Experience</a>
+        <a href="#education">Education</a>
         <a href="#awards">Awards</a>
       </nav>
 
@@ -426,7 +434,7 @@
           <li><span class="news-date">2026.09</span> 将进入北京交通大学 ADaM 实验室攻读人工智能硕士研究生，导师为桑基韬教授。</li>
           <li><span class="news-date">2026.01</span> 在上海人工智能国家实验室参与科研服务、项目协同与技术流程标准化相关工作。</li>
           <li><span class="news-date">2025.06</span> 完成本科毕业论文《基于多模态融合的智能驾驶安全监测系统设计与实现》。</li>
-          <li><span class="news-date">2024.09</span> 主持国家级大学生创新创业项目：基于多模态融合的驾驶员健康监测系统研究。</li>
+          <li><span class="news-date">2024.09</span> 主持国家级大学生创新训练计划项目：智能飞鱼——新一代的智能汽车管家。</li>
         </ul>
       </section>
 
@@ -477,32 +485,46 @@
       </section>
 
       <section id="publications">
-        <h2>PUBLICATIONS <a class="go-top" href="#top">Go Top</a></h2>
+        <h2>PUBLICATIONS & RESEARCH OUTPUTS <a class="go-top" href="#top">Go Top</a></h2>
 
+        <h3 class="sub-title">学术论文</h3>
         <ol class="pub-list">
           <li>
-            <strong>The application of EEG signal analysis in the assessment and monitoring of neurodegenerative diseases during physical intervention.</strong>
-            <br />
-            余剑豪，第一作者，<span class="red">SCI Q2 在投</span>。
+            <strong>Yu J, Wang Z, Jin Z.</strong>
+            Progress and prospect of artificial intelligence in the diagnosis and treatment of liver cancer[C]//
+            Proceedings of the 2023 4th International Symposium on Artificial Intelligence for Medicine Science.
+            2023: 927-930.
           </li>
 
           <li>
-            <strong>Progress and prospect of artificial intelligence in the diagnosis and treatment of liver cancer.</strong>
-            <br />
-            余剑豪，第一作者，EI 会议检索。
+            <strong>Yu J, Xu Z, Liang J, et al.</strong>
+            Research progress in finite element analysis of ankle sprains[C]//
+            BIO Web of Conferences. EDP Sciences, 2023, 72: 02010.
           </li>
 
           <li>
-            <strong>Research progress in finite element analysis of ankle sprains.</strong>
-            <br />
-            余剑豪，第一作者，EI 会议检索。
+            <strong>Wang Z, Yu J.</strong>
+            Neural network and time series prediction based Research on global warming modelling[C]//
+            Proceedings of the International Conference on Mathematics and Machine Learning.
+            2023: 272-276.
           </li>
 
           <li>
             <strong>《基于多模态融合的智能驾驶安全监测系统设计与实现》</strong>
             <br />
-            本科毕业论文，吉林外国语大学，2026。
+            本科毕业论文，吉林外国语大学人工智能学院，2026。
           </li>
+        </ol>
+
+        <h3 class="sub-title">软件著作权</h3>
+        <ol class="pub-list" start="5">
+          <li>第一著作权人，国内智慧农业一体化服务平台，登记号：2025SR1361698。</li>
+          <li>第一著作权人，智能汽车管家软件系统，登记号：2024SR1652720。</li>
+          <li>第一著作权人，汽车销售管理系统，登记号：2025SR0132633。</li>
+          <li>第一著作权人，多模态驾驶行为监测系统，登记号：2025SR1515896。</li>
+          <li>第一著作权人，基于 Spring Boot + Vue 的校园招聘系统，登记号：2025SR1677255。</li>
+          <li>第一著作权人，基于 Unity3D 设计的中医药文化云游平台，登记号：2024SR0446541。</li>
+          <li>第二著作权人，非法集资案件信息登记系统，登记号：2024SR0147796。</li>
         </ol>
       </section>
 
@@ -510,40 +532,51 @@
         <h2>PROJECTS <a class="go-top" href="#top">Go Top</a></h2>
 
         <div class="item">
-          <h3>Agent Harness for LLM Reasoning Evaluation</h3>
-          <div class="meta">Research-oriented project, in progress</div>
+          <h3>国家级大学生创新训练计划项目：基于人工智能影像识别对肺部疾病研究预测</h3>
+          <div class="meta">项目号：202310964029，2023.09 – 2024.09</div>
           <p>
-            面向大模型智能体推理与工具调用评测，计划构建任务执行、推理轨迹、工具调用、失败分析和自动评分模块，
-            用于分析 LLM-based Agent 在复杂任务中的能力边界。
+            基于医学影像识别与深度学习方法，探索人工智能在肺部疾病辅助诊断中的应用，
+            重点关注影像特征提取、模型训练优化与疾病预测。
           </p>
         </div>
 
         <div class="item">
-          <h3>国家级大学生创新创业项目：基于多模态融合的驾驶员健康监测系统研究</h3>
-          <div class="meta">项目主持，2024.09 – 2026.03</div>
+          <h3>国家级大学生创新训练计划项目：智能飞鱼——新一代的智能汽车管家</h3>
+          <div class="meta">项目号：202410964054X，2024.05 – 2025.05</div>
           <p>
-            设计多模态 DMS 驾驶员健康监测系统，融合驾驶行为影像、生理时序信号和车载环境数据，
-            实现驾驶员心率、血氧、疲劳状态等指标的实时监测与风险预警。
+            面向智能汽车管家与驾驶员健康监测场景，设计多模态 DMS 系统，融合驾驶行为影像、
+            生理时序信号和车载环境数据，实现驾驶员心率、血氧、疲劳状态等指标的实时监测与风险预警。
           </p>
         </div>
 
         <div class="item">
-          <h3>华为云 DevRun AI 应用开发项目（NLP 方向）</h3>
-          <div class="meta">项目主持，2022.11 – 2023.01</div>
+          <h3>国家级大学生创新训练计划项目：智农科技——智慧农业平台设计与研究</h3>
+          <div class="meta">项目号：202510964054X，2025.05 – 2026.05</div>
+          <p>
+            面向智慧农业场景，设计农业信息化与智能化服务平台，探索人工智能、数据分析与农业生产服务的融合应用。
+          </p>
+        </div>
+
+        <div class="item">
+          <h3>华为云全国青年人工智能实践项目：DevRun AI 应用开发自然语言处理</h3>
+          <div class="meta">项目号：CHWYS0223173931079720，2022.12 – 2023.01</div>
           <p>
             基于华为云 ModelArts 平台与 MindSpore 框架，参与车载场景大语言模型多轮对话系统开发，
             覆盖数据标注、指令微调、模型压缩与云端部署，支撑端侧 AI Agent 实时交互能力。
           </p>
         </div>
 
-        <div class="item">
-          <h3>国家级大学生创新创业项目：基于人工智能影像识别对肺部疾病研究</h3>
-          <div class="meta">项目主持，2022.06 – 2024.09</div>
-          <p>
-            基于 ImageNet 预训练模型优化医学影像识别训练流程，采用多维度数据增强策略提升模型泛化能力，
-            并引入 LIME / SHAP 等方法增强模型可解释性。
-          </p>
-        </div>
+        <h3 class="sub-title">其他科研与实践项目</h3>
+        <ul>
+          <li>吉林省人社厅数字经济与数字吉林建设项目：数字经济与数字吉林建设，项目号：2023SJ01796，2023.08。</li>
+          <li>吉林外国语大学学生科研项目：智能图像识别预测与疾病诊断研究，项目号：2023059，2023.03 – 2023.11。</li>
+          <li>吉林外国语大学学生科研项目：基于车联网在汽车健康管家软件上的创新研究，项目号：2025065，2024.12 – 2025.06。</li>
+          <li>吉林外国语大学学生科研项目：智保电盒——种防误操作电线盒，项目号：JWXSKY2024B169，2024.06 – 2025.05。</li>
+          <li>北京大学研究生教育创新计划普适计算与大数据项目：普适计算与大数据研究，项目号：2024101010，2024.07。</li>
+          <li>北京大学-阿里知行实验室项目：网络与系统安全实验，项目号：2400941186，2024.07 – 2024.08。</li>
+          <li>西安交通大学创新与实践项目：医工交叉外科创新与实践，2024.08。</li>
+          <li>教育部中外人文交流中心项目：中国高校人工智能人才国际培养计划项目，项目号：220810，2022.08。</li>
+        </ul>
       </section>
 
       <section id="experience">

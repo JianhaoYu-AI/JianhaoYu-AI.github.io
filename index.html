@@ -6,474 +6,630 @@
   <title>余剑豪 | 个人主页</title>
 
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
+      background: #f3f5f7;
+      color: #222;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
                    "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
-      background: #f6f8fa;
-      color: #24292f;
-      line-height: 1.8;
+      font-size: 16px;
+      line-height: 1.75;
     }
 
-    .container {
-      max-width: 980px;
-      margin: 40px auto;
-      padding: 42px;
-      background: #ffffff;
-      border-radius: 14px;
-      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
-    }
-
-    .header {
-      display: flex;
-      gap: 32px;
-      align-items: center;
-      border-bottom: 1px solid #eaecef;
-      padding-bottom: 30px;
-    }
-
-    .avatar {
-      width: 156px;
-      height: 156px;
-      border-radius: 14px;
-      object-fit: cover;
-      background: #ddd;
-    }
-
-    h1 {
-      margin: 0;
-      font-size: 38px;
-      line-height: 1.25;
-      color: #1f2328;
-    }
-
-    h2 {
-      font-size: 25px;
-      border-bottom: 1px solid #eaecef;
-      padding-bottom: 8px;
-      margin-bottom: 18px;
-      color: #1f2328;
-    }
-
-    h3 {
-      margin-bottom: 4px;
-      color: #1f2328;
-    }
-
-    .subtitle {
-      color: #57606a;
-      font-size: 17px;
-      margin-top: 10px;
-      margin-bottom: 12px;
-    }
-
-    .meta {
-      margin-top: 10px;
-      color: #24292f;
-    }
-
-    .badge {
-      display: inline-block;
-      background: #eef4ff;
-      color: #0969da;
-      padding: 3px 10px;
-      border-radius: 999px;
-      font-size: 13px;
-      font-weight: 600;
-      margin-right: 6px;
-      margin-bottom: 8px;
-    }
-
-    nav {
-      margin: 28px 0;
-      padding-bottom: 18px;
-      border-bottom: 1px solid #eaecef;
-    }
-
-    nav a {
-      display: inline-block;
-      margin-right: 18px;
-      margin-bottom: 8px;
-      color: #0969da;
+    a {
+      color: #0066cc;
       text-decoration: none;
-      font-weight: 600;
+      font-weight: 500;
     }
 
-    nav a:hover {
+    a:hover {
       text-decoration: underline;
     }
 
+    .page {
+      max-width: 1220px;
+      margin: 0 auto;
+      padding: 22px 18px 40px;
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 18px;
+    }
+
+    /* 左侧信息栏：模仿学术主页风格 */
+    .sidebar {
+      background: #ffffff;
+      border: 1px solid #e5e7eb;
+      border-radius: 8px;
+      overflow: hidden;
+      align-self: start;
+      position: sticky;
+      top: 18px;
+    }
+
+    .profile {
+      padding: 26px 24px 20px;
+      text-align: center;
+      border-bottom: 1px solid #eeeeee;
+    }
+
+    .avatar {
+      width: 190px;
+      height: 190px;
+      object-fit: cover;
+      border-radius: 8px;
+      display: block;
+      margin: 0 auto 16px;
+    }
+
+    .name {
+      font-size: 24px;
+      font-weight: 700;
+      margin: 4px 0 0;
+      line-height: 1.3;
+    }
+
+    .name-en {
+      font-size: 15px;
+      color: #666;
+      margin-top: 4px;
+    }
+
+    .side-section {
+      padding: 20px 24px;
+      border-bottom: 1px solid #eeeeee;
+    }
+
+    .side-title {
+      color: #888;
+      font-size: 14px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .side-section p {
+      margin: 0 0 8px;
+      color: #444;
+      line-height: 1.55;
+    }
+
+    .side-section ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .side-section li {
+      margin: 5px 0;
+      line-height: 1.45;
+    }
+
+    .keyword {
+      display: inline-block;
+      margin: 3px 4px 3px 0;
+      padding: 2px 7px;
+      border: 1px solid #d8e7ff;
+      background: #f4f8ff;
+      color: #0057b8;
+      border-radius: 4px;
+      font-size: 13px;
+    }
+
+    /* 右侧主体 */
+    .main {
+      background: #ffffff;
+      border: 1px solid #e5e7eb;
+      border-radius: 8px;
+      padding: 0 36px 36px;
+    }
+
+    .topnav {
+      height: 68px;
+      border-bottom: 1px solid #eeeeee;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 34px;
+      flex-wrap: wrap;
+    }
+
+    .topnav a {
+      color: #222;
+      font-size: 16px;
+      font-weight: 500;
+    }
+
+    .topnav a:hover {
+      color: #0066cc;
+    }
+
+    .intro {
+      padding: 28px 0 18px;
+      border-bottom: 1px solid #f0f0f0;
+    }
+
+    .intro p {
+      margin: 0 0 14px;
+      text-align: justify;
+    }
+
+    .label {
+      color: #0066cc;
+      font-weight: 700;
+    }
+
+    .red {
+      color: #d0021b;
+      font-weight: 700;
+    }
+
     section {
-      margin-top: 36px;
+      padding-top: 28px;
+      margin-top: 6px;
+    }
+
+    h2 {
+      font-size: 23px;
+      margin: 0 0 12px;
+      color: #222;
+      line-height: 1.35;
+      text-transform: uppercase;
+    }
+
+    .go-top {
+      font-size: 14px;
+      font-weight: 400;
+      margin-left: 10px;
+    }
+
+    h3 {
+      font-size: 18px;
+      margin: 12px 0 6px;
+      color: #111;
+    }
+
+    .section-desc {
+      margin: 0 0 14px;
+      color: #444;
+    }
+
+    .research-box {
+      border: 1px solid #8fc9ec;
+      margin: 12px 0 18px;
+    }
+
+    .research-title {
+      background: #d9f0ff;
+      border-bottom: 1px solid #8fc9ec;
+      padding: 9px 12px;
+      font-weight: 700;
+      color: #111;
+    }
+
+    .research-body {
+      padding: 12px 14px;
+    }
+
+    .research-body p {
+      margin: 0 0 8px;
     }
 
     .item {
-      margin-bottom: 24px;
+      margin: 0 0 18px;
+      padding-bottom: 14px;
+      border-bottom: 1px dashed #dddddd;
     }
 
-    .item p {
-      margin-top: 6px;
-      margin-bottom: 8px;
+    .item:last-child {
+      border-bottom: none;
     }
 
-    .muted {
-      color: #57606a;
+    .meta {
+      color: #666;
+      font-size: 15px;
+      margin-top: 2px;
     }
 
-    .grid {
+    ul {
+      padding-left: 22px;
+      margin-top: 8px;
+    }
+
+    li {
+      margin: 5px 0;
+    }
+
+    .pub-list {
+      padding-left: 22px;
+    }
+
+    .pub-list li {
+      margin-bottom: 10px;
+    }
+
+    .news-list {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .news-list li {
+      margin: 7px 0;
+    }
+
+    .news-date {
+      display: inline-block;
+      width: 78px;
+      color: #666;
+      font-family: Consolas, Menlo, monospace;
+    }
+
+    .two-col {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 18px;
     }
 
-    .card {
-      border: 1px solid #eaecef;
-      border-radius: 12px;
-      padding: 18px;
-      background: #ffffff;
+    .small-card {
+      border: 1px solid #e6e6e6;
+      border-radius: 6px;
+      padding: 14px 16px;
+      background: #fafafa;
     }
 
-    .card h3 {
+    .small-card h3 {
       margin-top: 0;
     }
 
-    .highlight {
-      background: #f6f8fa;
-      border-left: 4px solid #0969da;
-      padding: 14px 16px;
-      border-radius: 8px;
-      margin-top: 12px;
-    }
-
-    ul {
-      padding-left: 22px;
-    }
-
-    a {
-      color: #0969da;
-    }
-
-    .button {
-      display: inline-block;
-      border: 1px solid #0969da;
-      color: #0969da;
-      padding: 7px 12px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: 600;
-      margin-right: 8px;
-      margin-top: 8px;
-    }
-
-    .button:hover {
-      background: #eef4ff;
-      text-decoration: none;
-    }
-
-    .button-muted {
-      display: inline-block;
-      border: 1px solid #d0d7de;
-      color: #57606a;
-      padding: 7px 12px;
-      border-radius: 8px;
-      font-weight: 600;
-      margin-top: 8px;
-    }
-
     footer {
-      margin-top: 42px;
+      margin-top: 36px;
       padding-top: 18px;
-      border-top: 1px solid #eaecef;
-      color: #57606a;
+      border-top: 1px solid #eeeeee;
+      color: #666;
       font-size: 14px;
+      text-align: center;
     }
 
-    @media (max-width: 760px) {
-      .container {
-        margin: 0;
-        border-radius: 0;
-        padding: 24px;
-      }
-
-      .header {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .avatar {
-        width: 128px;
-        height: 128px;
-      }
-
-      .grid {
+    @media (max-width: 900px) {
+      .page {
         grid-template-columns: 1fr;
       }
 
-      h1 {
-        font-size: 31px;
+      .sidebar {
+        position: static;
+      }
+
+      .avatar {
+        width: 160px;
+        height: 160px;
+      }
+
+      .main {
+        padding: 0 22px 28px;
+      }
+
+      .topnav {
+        height: auto;
+        padding: 18px 0;
+        justify-content: flex-start;
+        gap: 16px;
+      }
+
+      .two-col {
+        grid-template-columns: 1fr;
+      }
+
+      .news-date {
+        width: auto;
+        margin-right: 8px;
       }
     }
   </style>
 </head>
 
 <body>
-  <div class="container">
-    <header class="header">
-      <img src="头像.jpg" alt="余剑豪" class="avatar" />
+  <div class="page" id="top">
 
-      <div>
-        <h1>余剑豪</h1>
+    <!-- 左侧信息栏 -->
+    <aside class="sidebar">
+      <div class="profile">
+        <img src="头像.jpg" alt="余剑豪" class="avatar" />
+        <div class="name">余剑豪</div>
+        <div class="name-en">Jianhao Yu</div>
+      </div>
 
-        <p class="subtitle">
-          北京交通大学 · 计算机科学与技术学院 · 人工智能硕士研究生<br />
-          ADaM 实验室 ｜ 导师：桑基韬教授
+      <div class="side-section">
+        <div class="side-title">Profile</div>
+        <p>北京交通大学</p>
+        <p>计算机科学与技术学院</p>
+        <p>人工智能硕士研究生</p>
+        <p><strong>ADaM 实验室</strong></p>
+        <p>导师：桑基韬老师</p>
+      </div>
+
+      <div class="side-section">
+        <div class="side-title">Research Interests</div>
+        <span class="keyword">AI Agent</span>
+        <span class="keyword">Agent Harness</span>
+        <span class="keyword">大模型推理</span>
+        <span class="keyword">智能体评测</span>
+        <span class="keyword">工具调用</span>
+        <span class="keyword">多模态智能</span>
+      </div>
+
+      <div class="side-section">
+        <div class="side-title">Contact</div>
+        <p><strong>E-Mail:</strong><br />
+          <a href="mailto:yujianhao2138@gmail.com">yujianhao2138@gmail.com</a>
         </p>
-
-        <p class="meta">
-          研究方向：
-          <strong>AI Agent、Agent Harness、大模型推理、智能体评测、多模态智能</strong>
-        </p>
-
-        <p>
-          <a class="button" href="https://github.com/JianhaoYu-AI">GitHub</a>
-          <a class="button" href="mailto:yujianhao2138@gmail.com">邮箱联系</a>
+        <p><strong>GitHub:</strong><br />
+          <a href="https://github.com/JianhaoYu-AI">JianhaoYu-AI</a>
         </p>
       </div>
-    </header>
 
-    <nav>
-      <a href="#about">个人简介</a>
-      <a href="#research">研究方向</a>
-      <a href="#publications">论文成果</a>
-      <a href="#projects">项目经历</a>
-      <a href="#experience">实习经历</a>
-      <a href="#education">教育背景</a>
-      <a href="#awards">荣誉奖项</a>
-      <a href="#cv">简历</a>
-      <a href="#contact">联系方式</a>
-    </nav>
-
-    <section id="about">
-      <h2>个人简介</h2>
-
-      <p>
-        我是余剑豪，目前为北京交通大学计算机科学与技术学院人工智能专业硕士研究生，所在实验室为
-        <strong>ADaM 实验室</strong>，导师为<strong>桑基韬教授</strong>。当前主要关注
-        AI Agent、Agent Harness、大模型推理、智能体评测、工具调用、规划与多模态智能系统。
-      </p>
-
-      <p>
-        本科毕业于吉林外国语大学人工智能专业，专业排名 <strong>1/97</strong>，本科绩点
-        <strong>4.1/5.0</strong>。本科阶段主要围绕多模态驾驶行为监测、自然语言处理、
-        目标检测、智能软件系统和 AI 工程化应用开展项目实践。
-      </p>
-
-      <div class="highlight">
-        <strong>当前重点：</strong>
-        面向 AI Agent 与大模型推理方向，系统学习智能体评测框架、Agent Harness、推理轨迹分析、
-        工具调用、任务规划和多模态智能系统，为后续科研论文与工程项目积累基础。
-      </div>
-    </section>
-
-    <section id="research">
-      <h2>研究方向</h2>
-
-      <p>
-        <span class="badge">AI Agent</span>
-        <span class="badge">Agent Harness</span>
-        <span class="badge">大模型推理</span>
-        <span class="badge">智能体评测</span>
-        <span class="badge">工具调用</span>
-        <span class="badge">任务规划</span>
-        <span class="badge">多模态智能</span>
-        <span class="badge">自然语言处理</span>
-        <span class="badge">计算机视觉</span>
-      </p>
-
-      <div class="grid">
-        <div class="card">
-          <h3>AI Agent 与 Agent Harness</h3>
-          <p>
-            关注大模型智能体在工具调用、任务分解、推理轨迹、执行反馈和失败归因方面的评测与优化，
-            希望构建面向真实任务的 Agent Harness 与评测框架。
-          </p>
-        </div>
-
-        <div class="card">
-          <h3>多模态智能系统</h3>
-          <p>
-            具备多模态驾驶员健康监测、目标检测、生理信号融合和智能车载应用相关项目经验，
-            关注多源信息融合在实际智能系统中的落地。
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section id="publications">
-      <h2>论文成果</h2>
-
-      <div class="item">
-        <h3>论文与稿件</h3>
+      <div class="side-section">
+        <div class="side-title">Links</div>
         <ul>
-          <li>
-            第一作者：
-            <strong>《The application of EEG signal analysis in the assessment and monitoring of neurodegenerative diseases during physical intervention》</strong>
-            <span class="muted">SCI Q2 在投。</span>
-          </li>
-
-          <li>
-            第一作者：
-            <strong>《Progress and prospect of artificial intelligence in the diagnosis and treatment of liver cancer》</strong>
-            <span class="muted">EI 会议检索。</span>
-          </li>
-
-          <li>
-            第一作者：
-            <strong>《Research progress in finite element analysis of ankle sprains》</strong>
-            <span class="muted">EI 会议检索。</span>
-          </li>
+          <li><a href="#research">Research</a></li>
+          <li><a href="#publications">Publications</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#awards">Awards</a></li>
+          <li><a href="#cv">CV</a></li>
         </ul>
       </div>
+    </aside>
 
-      <div class="item">
-        <h3>本科毕业论文</h3>
-        <p>
-          <strong>《基于多模态融合的智能驾驶安全监测系统设计与实现》</strong><br />
-          围绕驾驶员疲劳与健康状态监测，结合目标检测、行为分析和多模态信息融合，设计并实现驾驶安全监测系统。
-        </p>
-      </div>
-    </section>
+    <!-- 右侧主体 -->
+    <main class="main">
 
-    <section id="projects">
-      <h2>项目经历</h2>
+      <nav class="topnav">
+        <a href="#home">Homepage</a>
+        <a href="#research">Research</a>
+        <a href="#publications">Publications</a>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#awards">Awards</a>
+        <a href="#cv">CV</a>
+      </nav>
 
-      <div class="item">
-        <h3>Agent Harness for LLM Reasoning Evaluation</h3>
+      <div class="intro" id="home">
         <p>
-          面向大模型智能体推理与工具调用评测的研究型项目，计划构建任务执行、推理轨迹、工具调用、
-          失败分析和自动评分模块，用于分析 LLM-based Agent 在复杂任务中的能力边界。
+          我是<strong>余剑豪</strong>，目前为北京交通大学计算机科学与技术学院人工智能专业硕士研究生，
+          所在实验室为 <strong>ADaM 实验室</strong>，导师为<strong>桑基韬老师</strong>。
+          我的研究兴趣包括 <strong>AI Agent、Agent Harness、大模型推理、智能体评测、工具调用、规划与多模态智能系统</strong>。
         </p>
-        <p>
-          <strong>关键词：</strong>AI Agent、Agent Harness、大模型评测、推理轨迹、工具调用、失败归因
-        </p>
-      </div>
 
-      <div class="item">
-        <h3>国家级大学生创新创业项目：基于多模态融合的驾驶员健康监测系统研究</h3>
         <p>
-          作为项目主持人，设计多模态 DMS 驾驶员健康监测系统，融合驾驶行为影像、生理时序信号和车载环境数据，
-          实现驾驶员心率、血氧、疲劳状态等指标的实时监测与风险预警。
+          <span class="label">Recent Focus:</span>
+          近期我主要围绕大模型智能体展开学习与研究准备，关注如何构建面向真实任务的 Agent Harness，
+          对智能体的推理轨迹、工具调用、任务完成率、失败归因与执行反馈进行系统评测。
         </p>
-        <p>
-          <strong>关键词：</strong>多模态学习、驾驶员监测、健康预警、DMS、目标检测、智能车载系统
-        </p>
-      </div>
 
-      <div class="item">
-        <h3>华为云 DevRun AI 应用开发项目（NLP 方向）</h3>
         <p>
-          基于华为云 ModelArts 平台与 MindSpore 框架，参与车载场景大语言模型多轮对话系统开发，
-          覆盖数据标注、指令微调、模型压缩与云端部署。项目中针对边缘设备适配轻量化算子，
-          支撑端侧 AI Agent 实时交互能力。
+          <span class="label">Background:</span>
+          本科毕业于吉林外国语大学人工智能专业，专业排名 <strong>1/97</strong>，本科绩点
+          <strong>4.1/5.0</strong>。本科阶段主要围绕多模态驾驶行为监测、自然语言处理、目标检测、
+          智能软件系统与 AI 工程化应用开展项目实践。
         </p>
+
         <p>
-          <strong>关键词：</strong>自然语言处理、ModelArts、MindSpore、指令微调、模型压缩、端侧智能体
+          <span class="label">For More:</span>
+          欢迎通过 GitHub 或邮箱与我交流 AI Agent、Agent Harness、多模态智能系统与大模型应用相关问题。
         </p>
       </div>
 
-      <div class="item">
-        <h3>国家级大学生创新创业项目：基于人工智能影像识别对肺部疾病研究</h3>
+      <section id="news">
+        <h2>NEWS <a class="go-top" href="#top">Go Top</a></h2>
+        <ul class="news-list">
+          <li><span class="news-date">2026.09</span> 将进入北京交通大学 ADaM 实验室攻读人工智能硕士研究生，导师为桑基韬老师。</li>
+          <li><span class="news-date">2026.01</span> 在上海人工智能国家实验室参与科研服务、项目协同与技术流程标准化相关工作。</li>
+          <li><span class="news-date">2025.06</span> 完成本科毕业论文《基于多模态融合的智能驾驶安全监测系统设计与实现》。</li>
+          <li><span class="news-date">2024.09</span> 主持国家级大学生创新创业项目：基于多模态融合的驾驶员健康监测系统研究。</li>
+        </ul>
+      </section>
+
+      <section id="research">
+        <h2>RESEARCH <a class="go-top" href="#top">Go Top</a></h2>
+        <p class="section-desc">
+          我当前主要关注 AI Agent 与多模态智能系统，重点从智能体评测、推理轨迹分析、工具调用与任务规划等角度开展研究准备。
+        </p>
+
+        <div class="research-box">
+          <div class="research-title">AI Agent & Agent Harness</div>
+          <div class="research-body">
+            <p>
+              关注大模型智能体在复杂任务中的执行过程，包括任务分解、工具调用、推理链路、执行反馈和失败归因。
+              目标是构建更贴近真实应用场景的 Agent Harness，对智能体能力进行可复现、可比较、可分析的评测。
+            </p>
+            <p>
+              <strong>关键词：</strong>AI Agent，Agent Harness，LLM Reasoning，Agent Evaluation，Tool-use，Planning。
+            </p>
+          </div>
+        </div>
+
+        <div class="research-box">
+          <div class="research-title">Multimodal Intelligent Systems</div>
+          <div class="research-body">
+            <p>
+              关注视觉、文本、生理信号和车载环境数据的多源融合。本科阶段曾围绕驾驶员健康监测与疲劳检测设计多模态 DMS 系统，
+              结合驾驶行为影像、生理时序信号和风险预警算法，探索多模态智能系统在真实场景中的落地。
+            </p>
+            <p>
+              <strong>关键词：</strong>多模态学习，驾驶员监测，目标检测，健康预警，智能车载系统。
+            </p>
+          </div>
+        </div>
+
+        <div class="research-box">
+          <div class="research-title">LLM-based Applications & NLP</div>
+          <div class="research-body">
+            <p>
+              参与过华为云 DevRun AI 应用开发项目，围绕车载场景大语言模型多轮对话系统开展数据标注、指令微调、
+              模型压缩与端侧适配工作，关注大模型应用从训练、部署到交互的工程闭环。
+            </p>
+            <p>
+              <strong>关键词：</strong>自然语言处理，指令微调，ModelArts，MindSpore，端侧推理，AI Agent。
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="publications">
+        <h2>PUBLICATIONS <a class="go-top" href="#top">Go Top</a></h2>
+
+        <ol class="pub-list">
+          <li>
+            <strong>The application of EEG signal analysis in the assessment and monitoring of neurodegenerative diseases during physical intervention.</strong>
+            <br />
+            余剑豪，第一作者，<span class="red">SCI Q2 在投</span>。
+          </li>
+
+          <li>
+            <strong>Progress and prospect of artificial intelligence in the diagnosis and treatment of liver cancer.</strong>
+            <br />
+            余剑豪，第一作者，EI 会议检索。
+          </li>
+
+          <li>
+            <strong>Research progress in finite element analysis of ankle sprains.</strong>
+            <br />
+            余剑豪，第一作者，EI 会议检索。
+          </li>
+
+          <li>
+            <strong>《基于多模态融合的智能驾驶安全监测系统设计与实现》</strong>
+            <br />
+            本科毕业论文，吉林外国语大学，2026。
+          </li>
+        </ol>
+      </section>
+
+      <section id="projects">
+        <h2>PROJECTS <a class="go-top" href="#top">Go Top</a></h2>
+
+        <div class="item">
+          <h3>Agent Harness for LLM Reasoning Evaluation</h3>
+          <div class="meta">Research-oriented project, in progress</div>
+          <p>
+            面向大模型智能体推理与工具调用评测，计划构建任务执行、推理轨迹、工具调用、失败分析和自动评分模块，
+            用于分析 LLM-based Agent 在复杂任务中的能力边界。
+          </p>
+        </div>
+
+        <div class="item">
+          <h3>国家级大学生创新创业项目：基于多模态融合的驾驶员健康监测系统研究</h3>
+          <div class="meta">项目主持，2024.09 – 2026.03</div>
+          <p>
+            设计多模态 DMS 驾驶员健康监测系统，融合驾驶行为影像、生理时序信号和车载环境数据，
+            实现驾驶员心率、血氧、疲劳状态等指标的实时监测与风险预警。
+          </p>
+        </div>
+
+        <div class="item">
+          <h3>华为云 DevRun AI 应用开发项目（NLP 方向）</h3>
+          <div class="meta">项目主持，2022.11 – 2023.01</div>
+          <p>
+            基于华为云 ModelArts 平台与 MindSpore 框架，参与车载场景大语言模型多轮对话系统开发，
+            覆盖数据标注、指令微调、模型压缩与云端部署，支撑端侧 AI Agent 实时交互能力。
+          </p>
+        </div>
+
+        <div class="item">
+          <h3>国家级大学生创新创业项目：基于人工智能影像识别对肺部疾病研究</h3>
+          <div class="meta">项目主持，2022.06 – 2024.09</div>
+          <p>
+            基于 ImageNet 预训练模型优化医学影像识别训练流程，采用多维度数据增强策略提升模型泛化能力，
+            并引入 LIME / SHAP 等方法增强模型可解释性。
+          </p>
+        </div>
+      </section>
+
+      <section id="experience">
+        <h2>EXPERIENCE <a class="go-top" href="#top">Go Top</a></h2>
+
+        <div class="item">
+          <h3>北京交通大学 ADaM 实验室</h3>
+          <div class="meta">硕士研究生，2026.09 – 至今</div>
+          <p>
+            在桑基韬老师指导下，围绕 AI Agent、Agent Harness、大模型推理、工具调用、任务规划与智能体评测开展学习与研究准备。
+          </p>
+        </div>
+
+        <div class="item">
+          <h3>上海人工智能国家实验室</h3>
+          <div class="meta">科研服务部实习生，2026.01 – 2026.07</div>
+          <p>
+            参与国家重大研发计划相关项目的进度管理、流程标准化、技术方案评审与科研团队协同工作，
+            支持研究团队与企业合作方之间的高效对接。
+          </p>
+        </div>
+
+        <div class="item">
+          <h3>科大讯飞股份有限公司 · 东北亚研究院</h3>
+          <div class="meta">软件开发实习生，2023.07 – 2023.09</div>
+          <p>
+            参与语音识别模型优化项目，提出基于注意力机制的声学模型改进方案；开发数据标注质量监控系统，
+            通过 NLP 文本分析识别标注错误模式，提高标注效率并支持模型迭代。
+          </p>
+        </div>
+      </section>
+
+      <section id="education">
+        <h2>EDUCATION <a class="go-top" href="#top">Go Top</a></h2>
+
+        <div class="two-col">
+          <div class="small-card">
+            <h3>北京交通大学</h3>
+            <p>计算机科学与技术学院</p>
+            <p>人工智能专业，硕士研究生</p>
+            <p class="meta">2026.09 – 2029.06</p>
+            <p class="meta">ADaM 实验室，导师：桑基韬老师</p>
+          </div>
+
+          <div class="small-card">
+            <h3>吉林外国语大学</h3>
+            <p>人工智能专业，工学学士</p>
+            <p class="meta">2022.09 – 2026.06</p>
+            <p class="meta">专业排名：1/97；本科绩点：4.1/5.0；CET-6</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="awards">
+        <h2>AWARDS <a class="go-top" href="#top">Go Top</a></h2>
+
+        <ul>
+          <li>国家奖学金</li>
+          <li>吉林省优秀大学生标兵</li>
+          <li>吉林外国语大学校长奖学金</li>
+          <li>全国大学生算法设计与编程竞赛全国金奖（队长）</li>
+          <li>中国大学生计算机设计大赛全国二等奖 / 全国银奖（队长）</li>
+          <li>中国国际大学生创新大赛全国铜奖（队长）</li>
+          <li>亚太地区大学生数学建模竞赛奖项</li>
+        </ul>
+      </section>
+
+      <section id="cv">
+        <h2>CV <a class="go-top" href="#top">Go Top</a></h2>
         <p>
-          基于 ImageNet 预训练模型优化医学影像识别训练流程，采用旋转、缩放、平移等数据增强策略提升模型泛化能力，
-          并引入 LIME/SHAP 等方法增强模型可解释性，为医学影像辅助诊断提供技术支撑。
+          中文公开版简历后续将上传至主页。
         </p>
-        <p>
-          <strong>关键词：</strong>医学人工智能、影像识别、迁移学习、模型可解释性、LIME、SHAP
+        <p class="meta">
+          出于隐私考虑，公开主页暂不展示手机号、身份证明材料等敏感个人信息。
         </p>
-      </div>
-    </section>
+      </section>
 
-    <section id="experience">
-      <h2>实习经历</h2>
-
-      <div class="item">
-        <h3>北京交通大学 ADaM 实验室</h3>
-        <p class="muted">硕士研究生，2026.09 – 至今</p>
-        <p>
-          在桑基韬老师指导下，准备围绕 AI Agent、Agent Harness、大模型推理、工具调用、任务规划与智能体评测开展研究。
-        </p>
-      </div>
-
-      <div class="item">
-        <h3>上海人工智能国家实验室</h3>
-        <p class="muted">科研任务部实习生，2026.01 – 2026.07</p>
-        <p>
-          参与国家重大研发计划相关项目的流程标准化、项目进度管理、技术方案评审与科研团队协同工作，
-          支持研究团队与重点企业合作方之间的高效对接。
-        </p>
-      </div>
-
-      <div class="item">
-        <h3>科大讯飞股份有限公司 · 东北亚研究院</h3>
-        <p class="muted">软件开发实习生，2023.07 – 2023.09</p>
-        <p>
-          参与语音识别模型优化项目，提出基于注意力机制的声学模型改进方案；开发数据标注质量监控系统，
-          通过 NLP 文本分析识别标注错误模式，提高标注效率并支持模型迭代。
-        </p>
-      </div>
-    </section>
-
-    <section id="education">
-      <h2>教育背景</h2>
-
-      <div class="item">
-        <h3>北京交通大学</h3>
-        <p>
-          计算机科学与技术学院，人工智能专业，硕士研究生，2026.09 – 2029.06
-        </p>
-        <p class="muted">
-          所在实验室：ADaM 实验室；导师：桑基韬教授。
-        </p>
-      </div>
-
-      <div class="item">
-        <h3>吉林外国语大学</h3>
-        <p>
-          人工智能专业，工学学士，2022.09 – 2026.06
-        </p>
-        <p class="muted">
-          专业排名：1/97；本科绩点：4.1/5.0；英语水平：CET-6。
-        </p>
-      </div>
-    </section>
-
-    <section id="awards">
-      <h2>荣誉奖项</h2>
-
-      <ul>
-        <li>国家奖学金</li>
-        <li>吉林省优秀大学生标兵</li>
-        <li>吉林外国语大学校长奖学金</li>
-        <li>全国大学生算法设计与编程竞赛全国金奖（队长）</li>
-        <li>中国大学生计算机设计大赛全国二等奖 / 全国银奖（队长）</li>
-        <li>中国国际大学生创新大赛全国铜奖（队长）</li>
-        <li>亚太地区大学生数学建模竞赛国际三等奖</li>
-      </ul>
-    </section>
-
-    <section id="contact">
-      <h2>联系方式</h2>
-
-      <p>
-        邮箱：<a href="mailto:yujianhao2138@gmail.com">yujianhao2138@gmail.com</a><br />
-        GitHub：
-        <a href="https://github.com/JianhaoYu-AI">https://github.com/JianhaoYu-AI</a>
-      </p>
-    </section>
-
-    <footer>
-      最近更新：2026 年 6 月 ｜ 余剑豪
-    </footer>
+      <footer>
+        最近更新：2026 年 6 月 ｜ 余剑豪 Jianhao Yu
+      </footer>
+    </main>
   </div>
 </body>
 </html>

@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Yu Jianhao | Homepage</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+      background: #f6f8fa;
+      color: #24292f;
+      line-height: 1.7;
+    }
+
+    .container {
+      max-width: 920px;
+      margin: 40px auto;
+      padding: 40px;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    }
+
+    .header {
+      display: flex;
+      gap: 28px;
+      align-items: center;
+      border-bottom: 1px solid #eaecef;
+      padding-bottom: 28px;
+    }
+
+    .avatar {
+      width: 150px;
+      height: 150px;
+      border-radius: 12px;
+      object-fit: cover;
+      background: #ddd;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 34px;
+    }
+
+    .subtitle {
+      color: #57606a;
+      font-size: 17px;
+      margin-top: 8px;
+    }
+
+    nav {
+      margin: 26px 0;
+      padding-bottom: 18px;
+      border-bottom: 1px solid #eaecef;
+    }
+
+    nav a {
+      margin-right: 18px;
+      color: #0969da;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    section {
+      margin-top: 34px;
+    }
+
+    h2 {
+      font-size: 24px;
+      border-bottom: 1px solid #eaecef;
+      padding-bottom: 8px;
+    }
+
+    .item {
+      margin-bottom: 22px;
+    }
+
+    .item h3 {
+      margin-bottom: 4px;
+    }
+
+    .tag {
+      display: inline-block;
+      background: #eef4ff;
+      color: #0969da;
+      padding: 3px 8px;
+      border-radius: 6px;
+      font-size: 14px;
+      margin-right: 6px;
+      margin-bottom: 6px;
+    }
+
+    a {
+      color: #0969da;
+    }
+
+    @media (max-width: 700px) {
+      .container {
+        margin: 0;
+        border-radius: 0;
+        padding: 24px;
+      }
+
+      .header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .avatar {
+        width: 120px;
+        height: 120px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <header class="header">
+      <div class="avatar"></div>
+
+      <div>
+        <h1>Yu Jianhao / 余剑豪</h1>
+        <p class="subtitle">
+          M.S. Student in Artificial Intelligence<br />
+          School of Computer and Information Technology, Beijing Jiaotong University
+        </p>
+        <p>
+          Research Interests:
+          <strong>AI Agents, Agent Harness, LLM Reasoning, Multimodal Intelligence</strong>
+        </p>
+        <p>
+          GitHub:
+          <a href="https://github.com/JianhaoYu-AI">github.com/JianhaoYu-AI</a><br />
+          Email: your_email@example.com
+        </p>
+      </div>
+    </header>
+
+    <nav>
+      <a href="#about">About</a>
+      <a href="#research">Research</a>
+      <a href="#projects">Projects</a>
+      <a href="#education">Education</a>
+      <a href="#awards">Awards</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <section id="about">
+      <h2>About Me</h2>
+      <p>
+        I am an incoming master's student in Artificial Intelligence at Beijing Jiaotong University.
+        My current research interests lie in AI Agents, Agent Harness, LLM reasoning,
+        evaluation, and multimodal intelligent systems.
+      </p>
+      <p>
+        Before graduate school, I worked on multimodal driver monitoring systems,
+        object detection, intelligent software systems, and AI-related engineering projects.
+      </p>
+      <p>
+        我是余剑豪，即将进入北京交通大学计算机学院人工智能专业攻读硕士研究生。
+        目前主要关注 AI Agent、Agent Harness、大模型推理、智能体评测与多模态智能系统。
+      </p>
+    </section>
+
+    <section id="research">
+      <h2>Research Interests</h2>
+      <p>
+        <span class="tag">AI Agents</span>
+        <span class="tag">Agent Harness</span>
+        <span class="tag">LLM Reasoning</span>
+        <span class="tag">Tool-use</span>
+        <span class="tag">Planning</span>
+        <span class="tag">Multimodal Intelligence</span>
+      </p>
+    </section>
+
+    <section id="projects">
+      <h2>Selected Projects</h2>
+
+      <div class="item">
+        <h3>Agent Harness for LLM Reasoning Evaluation</h3>
+        <p>
+          An experimental framework for evaluating tool-use, reasoning traces,
+          task completion, and failure analysis of LLM-based agents.
+        </p>
+        <p><strong>Keywords:</strong> AI Agent, Agent Harness, LLM Evaluation, Reasoning Trace</p>
+      </div>
+
+      <div class="item">
+        <h3>Multimodal Driver Safety Monitoring System</h3>
+        <p>
+          A multimodal intelligent monitoring system based on object detection,
+          driver behavior analysis, and real-time visual inference.
+        </p>
+        <p><strong>Keywords:</strong> YOLOv12, Coordinate Attention, BiFPN, PyQt5, OpenCV</p>
+      </div>
+
+      <div class="item">
+        <h3>Intelligent Vehicle Assistant System</h3>
+        <p>
+          An intelligent software system related to multimodal interaction and smart vehicle services.
+        </p>
+      </div>
+    </section>
+
+    <section id="education">
+      <h2>Education</h2>
+
+      <div class="item">
+        <h3>Beijing Jiaotong University</h3>
+        <p>M.S. in Artificial Intelligence, 2026.09 – Present</p>
+      </div>
+
+      <div class="item">
+        <h3>Jilin International Studies University</h3>
+        <p>B.E. in Artificial Intelligence, 2022.09 – 2026.06</p>
+      </div>
+    </section>
+
+    <section id="awards">
+      <h2>Awards & Honors</h2>
+      <ul>
+        <li>National Scholarship / President Scholarship</li>
+        <li>Outstanding Graduate</li>
+        <li>Outstanding Undergraduate Thesis</li>
+        <li>Provincial Outstanding College Student Model</li>
+        <li>National Second Prize, China Collegiate Computing Design Contest</li>
+        <li>National Bronze Award, New Liberal Arts Innovation Competition</li>
+        <li>Provincial Champion, China International College Students' Innovation Competition</li>
+      </ul>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>
+        Email: your_email@example.com<br />
+        GitHub: <a href="https://github.com/JianhaoYu-AI">https://github.com/JianhaoYu-AI</a>
+      </p>
+    </section>
+  </div>
+</body>
+</html>
